@@ -12,7 +12,7 @@ const mimeTypes = {
 
 const server = http.createServer((req, res) => {
     let filePath = req.url === '/' ? '/index.html' : req.url;
-    filePath = path.join(__dirname, 'public', filePath);
+    filePath = path.join(__dirname, filePath);
     const ext = path.extname(filePath);
 
     fs.readFile(filePath, (err, content) => {
